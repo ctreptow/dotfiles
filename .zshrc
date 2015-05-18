@@ -17,9 +17,6 @@ export MBC_HOST=http://localhost:3000
 export REDIRECT_SIGN_IN_TO_DOMINO=false
 export MBC_WORK_ROOT=$HOME/Work
 
-alias uar='$MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
-alias fmdev='cd $MBC_WORK_ROOT/mbc && foreman start -f Procfile.dev'
-
 #setopt PROMPT_SUBST
 #PROMPT='%{$(pwd|grep --color=always /)%${#PWD}G%} %(!.%F{red}.%F{cyan})%n%f@%F{yellow}%m%f%(!.%F{red}.)%#%f '
 
@@ -34,3 +31,11 @@ PROMPT='%B%m%~%b$(git_super_status) %# '
 #PROMPT='%B%m~$(git_super_status) %# '
 
 GIT_PROMPT_EXECUTABLE="haskell"
+
+#set up some aliases
+alias uar='$MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
+alias fmdev='cd $MBC_WORK_ROOT/mbc && foreman start -f Procfile.dev'
+alias rdbr='rake db:reset'
+alias rdbm='rake db:migrate'
+alias rdbrb='rake db:rollback'
+
