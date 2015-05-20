@@ -39,3 +39,5 @@ alias rdbr='rake db:reset'
 alias rdbm='rake db:migrate'
 alias rdbrb='rake db:rollback'
 
+alias gco='git checkout'
+
