@@ -33,8 +33,12 @@ PROMPT='%B%m%~%b$(git_super_status) %# '
 GIT_PROMPT_EXECUTABLE="haskell"
 
 #set up some aliases
+alias cdmbc="cd $MBC_WORK_ROOT/mbc"
+alias cdhubble="cd $MBC_WORK_ROOT/hubble"
 alias uar='$MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
-alias fmdev='cd $MBC_WORK_ROOT/mbc && foreman start -f Procfile.dev'
+alias fmdev='cdmbc && foreman start -f Procfile.dev'
+alias fmdevhubble='cdmbc && foreman start -f Procfile.dev -c all=1,hubble=0'
+
 alias rdbr='rake db:reset'
 alias rdbm='rake db:migrate'
 alias rdbrb='rake db:rollback'
