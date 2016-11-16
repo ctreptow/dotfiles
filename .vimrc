@@ -12,3 +12,7 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+" Make it obvious where 80 characters is
+set textwidth=120
+set colorcolumn=+1
+set relativenumber    " relative line numbers are the shit

@@ -48,3 +48,9 @@ alias gco='git checkout'
 alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+alias gitcleanup='git branch --merged | egrep -v "(^\*|master|develop)" | xargs -n 1 git branch -d'
+
+# added by travis gem
+[ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
+
+ulimit -n 1024

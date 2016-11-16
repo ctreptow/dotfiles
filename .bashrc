@@ -13,3 +13,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export MBC_HOST=http://localhost:3000
+
+# added by travis gem
+[ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
