@@ -1,6 +1,37 @@
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:autocmd ColorScheme * highlight ExtraWhitespace
-:match ExtraWhitespace /\s\+$/ "Show trailing whitespace in red"
+" set the runtime path to include Vundle and initialize
+" rscheme solarized8_dark
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+"
+" " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-cucumber'
+Plugin 'lifepillar/vim-solarized8'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" "filetype plugin on
+" "
+" " Brief help
+" " :PluginList       - lists configured plugins
+" " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" "
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line
+
+colorscheme solarized8_dark_low
+
+match ErrorMsg '\s\+$'
+
 set expandtab         " Expand all tabs to spaces
 set tabstop=2         " Spaces used when tab key is pressed
 set shiftwidth=2      " Spaces used for indentation
