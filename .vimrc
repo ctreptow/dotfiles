@@ -1,6 +1,7 @@
 " set the runtime path to include Vundle and initialize
 " rscheme solarized8_dark
 set rtp+=~/.vim/bundle/Vundle.vim
+set directory=$HOME/.vim/swapfiles//
 call vundle#begin()
 " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
