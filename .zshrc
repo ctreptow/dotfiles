@@ -26,6 +26,9 @@ else
   source ~/src/zsh-git-prompt/zshrc.sh
 fi
 
+fpath=(~/.zsh/completions $fpath) 
+autoload -U compinit && compinit
+
 # an example prompt
 PROMPT='%B%m%~%b$(git_super_status) %# '
 #PROMPT='%B%m~$(git_super_status) %# '
@@ -38,16 +41,12 @@ alias cdhubble="cd $MBC_WORK_ROOT/hubble"
 alias uar='$MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
 alias fmdev='cdmbc && foreman start -f Procfile.dev'
 alias fmdevhubble='cdmbc && foreman start -f Procfile.dev -c all=1,hubble=0'
-
-alias rdbr='rake db:reset'
-alias rdbm='rake db:migrate'
-alias rdbrb='rake db:rollback'
-
+alias be='bundle exec'
+alias ber='bundle exec rake'
 alias gco='git checkout'
-
+alias gpo='git push -o origin'
 alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
 alias gitcleanup='git branch --merged | egrep -v "(^\*|master|develop)" | xargs -n 1 git branch -d'
 
 # added by travis gem
