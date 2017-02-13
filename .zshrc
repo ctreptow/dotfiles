@@ -17,6 +17,9 @@ export MBC_HOST=http://localhost:3000
 export REDIRECT_SIGN_IN_TO_DOMINO=false
 export MBC_WORK_ROOT=$HOME/Work
 
+# set so rake will run all the tests after Rails 5
+export DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+
 #setopt PROMPT_SUBST
 #PROMPT='%{$(pwd|grep --color=always /)%${#PWD}G%} %(!.%F{red}.%F{cyan})%n%f@%F{yellow}%m%f%(!.%F{red}.)%#%f '
 
@@ -26,7 +29,7 @@ else
   source ~/src/zsh-git-prompt/zshrc.sh
 fi
 
-fpath=(~/.zsh/completions $fpath) 
+fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
 # an example prompt
@@ -34,6 +37,12 @@ PROMPT='%B%m%~%b$(git_super_status) %# '
 #PROMPT='%B%m~$(git_super_status) %# '
 
 GIT_PROMPT_EXECUTABLE="haskell"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# # Example format: plugins=(rails git textmate ruby lighthouse)
+# # Add wisely, as too many plugins slow down shell startup.
+plugins=(bundler osx rake ruby rails gem brew)
 
 #set up some aliases
 alias cdmbc="cd $MBC_WORK_ROOT/mbc"
@@ -53,3 +62,5 @@ alias gitcleanup='git branch --merged | egrep -v "(^\*|master|develop)" | xargs 
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
 
 ulimit -n 1024
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
