@@ -16,3 +16,12 @@ filetype plugin on    " Enable filetype-specific plugins
 set textwidth=120
 set colorcolumn=+1
 set relativenumber    " relative line numbers are the shit
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rspec'
+
+vim-better-whitespace   vim-bundler             vim-colors-solarized    vim-cucumber            vim-rails               vim-rspec               vim-solarized8

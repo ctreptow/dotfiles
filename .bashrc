@@ -16,3 +16,5 @@ export MBC_HOST=http://localhost:3000
 
 # added by travis gem
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
