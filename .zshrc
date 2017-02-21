@@ -1,4 +1,5 @@
 . ~/.secrets
+export COV=1
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export RUBY_GC_MALLOC_LIMIT=100000000
 
