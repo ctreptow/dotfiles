@@ -1,13 +1,11 @@
 . ~/.secrets
+eval "$(rbenv init -)"
 export COV=1
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export RUBY_GC_MALLOC_LIMIT=100000000
-
 export RUBY_FREE_MIN=500000
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_GC_HEAP_FREE_SLOTS=500000
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
-
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
@@ -58,6 +56,7 @@ alias gpo='git push -o origin'
 alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias gitcleanup='git branch --merged | egrep -v "(^\*|master|develop)" | xargs -n 1 git branch -d'
+alias rcc='git diff-tree -r --no-commit-id --name-only master@\{u\} head | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop'
 
 # added by travis gem
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
