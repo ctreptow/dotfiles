@@ -1,5 +1,7 @@
 source ~/.secrets
-source ~/.tmuxinator/completion.zsh
+
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
 
 eval "$(rbenv init -)"
 
@@ -51,8 +53,27 @@ alias tml="tmux list-sessions"       #list running tmux sessions
 alias tma="tmux -2 attach -t $1"     #join a current session
 alias tmk="tmux kill-session -t $1"  #kill a session
 
+alias work="cd ~/Work"
+alias api="cd ~/Work/api"
+alias mbc="cd ~/Work/mbc"
+alias hub="cd ~/Work/hubble"
+alias head="cd ~/Work/headmaster"
+
 # added by travis gem
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-ulimit -n 1024
+ulimit -n 4096
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/Ctreptow/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
