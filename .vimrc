@@ -1,8 +1,35 @@
+" $HOME/.vimrc
+ :set directory=$HOME/.vim/swapfiles//
+
+" GUTENTAGS
+"
+"set one location for tags
+let g:gutentags_cache_dir="~/.vim/tags"
+
+let g:gutentags_project_info = []
+call add(g:gutentags_project_info, {"type": "go"})
+let g:gutentags_ctags_executable_go = 'gotags'
+
+"set list of directories to exclude when generating tags
+let g:gutentags_ctags_exclude=["node_modules","plugged","tmp","temp","log","vendor"]
+let g:gutentags_resolve_symlinks = 1
+
 " ALE
+" let g:ale_emit_conflict_warnings = 0
 " let g:ale_sign_warning = '▲'
 " let g:ale_sign_error = '✗'
+" let g:ale_sign_column_always = 1
 " highlight link ALEWarningSign String
 " highlight link ALEErrorSign Title
+
+" FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
+" set rtp+=/usr/local/opt/fzf
+" set rtp+=~/.fzf
+" nmap ; :Buffers<CR>
+" nmap <Leader>r :Tags<CR>
+" nmap <Leader>t :Files<CR>
+" nmap <Leader>a :Ag<CR>
+
 " Lightline
 let g:lightline = {
 \ 'colorscheme': 'wombat',
@@ -43,7 +70,7 @@ function! LightlineLinterOK() abort
   return l:counts.total == 0 ? '✓ ' : ''
 endfunction
 
-autocmd User ALELint call s:MaybeUpdateLightline()
+" autocmd User ALELint call s:MaybeUpdateLightline()
 
 " Update and show lightline but only if it's visible (e.g., not in Goyo)
 function! s:MaybeUpdateLightline()
@@ -51,6 +78,12 @@ function! s:MaybeUpdateLightline()
     call lightline#update()
   end
 endfunction
+
+" GitGutter
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
 
 " :highlight ExtraWhitespace ctermbg=red guibg=red
 " :highlight SignColumn ctermbg=Black
@@ -72,19 +105,34 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+set list
+set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+
+" for any plugins that use this, make their keymappings use comma
+let mapleader = ","
+let maplocalleader = ","
+
+let g:elm_format_autosave = 1
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-fugitive'
-Plugin 'posva/vim-vue'
+" Plugin 'sheerun/vim-polyglot'
+" Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-rails'
+" Plugin 'thoughtbot/vim-rspec'
+" Plugin 'tpope/vim-cucumber'
+" Plugin 'tpope/vim-haml'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'posva/vim-vue'
+" Plugin '/usr/local/bin/fzf'
+" Plugin 'junegunn/fzf.vim'
+" Plugin 'w0rp/ale'
+Plugin 'elmcast/elm-vim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'w0rp/ale'
+" Plugin 'elixir-editors/vim-elixir'
 Plugin 'itchyny/lightline.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ludovicchabant/vim-gutentags'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
