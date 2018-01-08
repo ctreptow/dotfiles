@@ -1,4 +1,5 @@
 source ~/.secrets
+source ~/Work/tmuxinator.zsh
 
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
@@ -57,6 +58,7 @@ alias rbp='git diff-tree -r --no-commit-id --name-only master@\{u\} head | xargs
 alias tml="tmux list-sessions"       #list running tmux sessions
 alias tma="tmux -2 attach -t $1"     #join a current session
 alias tmk="tmux kill-session -t $1"  #kill a session
+alias mux="tmuxinator"
 
 alias src="cd ~/Source"
 alias work="cd ~/Work"
