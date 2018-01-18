@@ -1,0 +1,6 @@
+name: von_trapp
+root: ~/Work/von_trapp
+windows:
+  - editor: vim
+  - shell:
+  - server: bundle exec rackup config.ru -p 5000

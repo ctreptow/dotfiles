@@ -1,0 +1,5 @@
+name: mbc_tools
+root: ~/Work/mbc_tools
+windows:
+  - editor: vim
+  - shell:

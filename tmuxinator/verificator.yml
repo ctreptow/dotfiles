@@ -1,0 +1,5 @@
+name: verificator
+root: ~/Work/verificator
+windows:
+  - editor: vim
+  - shell:

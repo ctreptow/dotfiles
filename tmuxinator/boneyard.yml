@@ -1,0 +1,6 @@
+name: boneyard
+root: ~/Work/boneyard
+windows:
+  - editor: vim
+  - shell:
+  - server: bundle exec rails s -p 4000

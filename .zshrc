@@ -41,6 +41,7 @@ GIT_PROMPT_EXECUTABLE="haskell"
 
 plugins=(bundler osx rake ruby rails gem brew)   # Add wisely, as too many plugins slow down shell startup.
 
+alias work="~/dotfiles/work"
 alias kkk="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|node|ruby'"
 alias uar='$MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
 alias fmdev='mbc && foreman start -f Procfile.dev'
@@ -61,7 +62,7 @@ alias tmk="tmux kill-session -t $1"  #kill a session
 alias mux="tmuxinator"
 
 alias src="cd ~/Source"
-alias work="cd ~/Work"
+#alias work="cd ~/Work"
 alias api="cd ~/Work/api"
 alias mbc="cd ~/Work/mbc"
 alias hub="cd ~/Work/hubble"

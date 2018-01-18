@@ -1,0 +1,6 @@
+name: commercial-billing
+root: ~/Work/commercial-billing
+windows:
+  - editor: vim
+  - shell:
+  - server: bundle exec rails server -p 3002

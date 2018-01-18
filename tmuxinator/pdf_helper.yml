@@ -1,0 +1,6 @@
+name: pdf_helper
+root: ~/Work/pdf_helper
+windows:
+  - editor: vim
+  - shell:
+  - server: bundle exec rackup config.ru -p 3999

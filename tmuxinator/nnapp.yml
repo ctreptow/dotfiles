@@ -1,0 +1,5 @@
+name: nnapp
+root: ~/Work/nnapp
+windows:
+  - editor: vim
+  - shell:

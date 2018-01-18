@@ -1,0 +1,6 @@
+name: hubble
+root: ~/Work/hubble
+windows:
+  - editor: vim
+  - shell:
+  - server: bundle exec rails server -p 3001
