@@ -23,7 +23,8 @@ let g:gutentags_resolve_symlinks = 1
 " highlight link ALEErrorSign Title
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
-" set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/bin/fzf
 " set rtp+=~/.fzf
 " nmap ; :Buffers<CR>
 " nmap <Leader>r :Tags<CR>
@@ -95,15 +96,27 @@ let g:gitgutter_sign_modified_removed = '∙'
 
 " :autocmd ColorScheme * highlight ExtraWhitespace
 " :match ExtraWhitespace /\s\+$/ "Show trailing whitespace in red"
-set expandtab         " Expand all tabs to spaces
-set tabstop=2         " Spaces used when tab key is pressed
-set shiftwidth=2      " Spaces used for indentation
-set nu                " Turn on line numbers
-set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+set undodir=~/.vim/undo
+set undofile
+set expandtab             " Expand all tabs to spaces
+set tabstop=2             " Spaces used when tab key is pressed
+set shiftwidth=2          " Spaces used for indentation
+set nu                    " Turn on line numbers
+set nocompatible          " We're running Vim, not Vi!
+set ruler                 " Show current line and column at bottom right
+set smartcase             " Include at least one uppercase character to search in a case-sensitive manner
+set number relativenumber " hybrid numbering.  Relative, plus the single absolution line you're on
+" turn off relative numbering in insert mode or when buffer loses focus
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+syntax on                 " Enable syntax highlighting
+filetype on               " Enable filetype detection
+filetype indent on        " Enable filetype-specific indenting
+filetype plugin on        " Enable filetype-specific plugins
 
 set list
 set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
@@ -124,8 +137,6 @@ call vundle#begin()
 " Plugin 'tpope/vim-haml'
 " Plugin 'tpope/vim-fugitive'
 " Plugin 'posva/vim-vue'
-" Plugin '/usr/local/bin/fzf'
-" Plugin 'junegunn/fzf.vim'
 " Plugin 'w0rp/ale'
 Plugin 'elmcast/elm-vim'
 Plugin 'elixir-lang/vim-elixir'
