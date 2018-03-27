@@ -1,6 +1,10 @@
 name: pdf_helper
-root: ~/Work/pdf_helper
+root: ~/code/work/pdf_helper
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rackup config.ru -p 3999

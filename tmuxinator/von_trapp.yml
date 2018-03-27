@@ -1,6 +1,10 @@
 name: von_trapp
-root: ~/Work/von_trapp
+root: ~/code/work/von_trapp
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rackup config.ru -p 5000

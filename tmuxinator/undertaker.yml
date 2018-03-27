@@ -1,6 +1,10 @@
 name: undertaker
-root: ~/Work/undertaker
+root: ~/code/work/undertaker
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rails server -p 3004

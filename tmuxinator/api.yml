@@ -1,5 +1,5 @@
-name: hubble
-root: ~/code/work/hubble
+name: api
+root: ~/code/work/api
 windows:
   - shell:
       layout: main-horizontal
@@ -7,4 +7,4 @@ windows:
         - shell:
         - shell:
         - shell:
-  - server: bundle exec rails server -p 3001
+  - server: bundle exec rails server -p 3010

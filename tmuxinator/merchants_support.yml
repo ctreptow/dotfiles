@@ -1,5 +1,9 @@
 name: merchants_support
-root: ~/Work/merchants_support
+root: ~/code/work/merchants_support
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:

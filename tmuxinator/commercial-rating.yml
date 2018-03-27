@@ -1,6 +1,9 @@
 name: commercial-rating
-root: ~/Work/commercial-rating
+root: ~/code/work/commercial-rating
 windows:
-  - editor: vim
   - shell:
-  - server: bundle exec rackup config.ru -p 9293
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:

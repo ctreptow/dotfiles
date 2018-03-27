@@ -1,6 +1,10 @@
 name: piedpiper
-root: ~/Work/piedpiper
+root: ~/code/work/piedpiper
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rails server -p 3003

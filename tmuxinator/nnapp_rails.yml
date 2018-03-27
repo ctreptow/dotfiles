@@ -1,5 +1,9 @@
 name: nnapp_rails
-root: ~/Work/nnapp_rails
+root: ~/code/work/nnapp_rails
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:

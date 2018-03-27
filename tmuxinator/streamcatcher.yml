@@ -1,6 +1,10 @@
 name: streamcatcher
-root: ~/Work/streamcatcher
+root: ~/code/work/streamcatcher
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rackup config.ru -p 9294

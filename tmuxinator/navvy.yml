@@ -1,6 +1,10 @@
 name: navvy
-root: ~/Work/navvy
+root: ~/code/work/navvy
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec shotgun config.ru -p 3006

@@ -1,5 +1,9 @@
 name: imageright_js
-root: ~/Work/image-right-js
+root: ~/code/work/image-right-js
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:

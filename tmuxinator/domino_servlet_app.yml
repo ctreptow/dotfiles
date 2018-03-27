@@ -1,5 +1,9 @@
 name: domino_servlet_app
-root: ~/Work/domino_servlet_app
+root: ~/code/work/domino_servlet_app
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:

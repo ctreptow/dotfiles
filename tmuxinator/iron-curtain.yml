@@ -1,6 +1,10 @@
 name: iron-curtain
-root: ~/Work/iron-curtain
+root: ~/code/work/iron-curtain
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rackup config.ru -p 9295

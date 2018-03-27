@@ -1,6 +1,10 @@
 name: headmaster
-root: ~/Work/headmaster
+root: ~/code/work/headmaster
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rails server -p 3005

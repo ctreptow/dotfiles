@@ -1,5 +1,5 @@
-name: hubble
-root: ~/code/work/hubble
+name: elixir
+root: ~/code/elixir/Elixir_for_Programmers/game
 windows:
   - shell:
       layout: main-horizontal
@@ -7,4 +7,3 @@ windows:
         - shell:
         - shell:
         - shell:
-  - server: bundle exec rails server -p 3001

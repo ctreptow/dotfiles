@@ -1,6 +1,10 @@
 name: the-commish
-root: ~/Work/the-commish
+root: ~/code/work/the-commish
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rails server -p 3008

@@ -1,6 +1,10 @@
 name: bond-doctor
-root: ~/Work/bond-doctor
+root: ~/code/work/bond-doctor
 windows:
-  - editor: vim
   - shell:
+      layout: main-horizontal
+      panes:
+        - shell:
+        - shell:
+        - shell:
   - server: bundle exec rackup config.ru -p 9291
