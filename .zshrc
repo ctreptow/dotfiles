@@ -1,3 +1,10 @@
+function source_if_possible()
+{
+  if [[ -r $1 ]]; then
+    source $1
+  fi
+}
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -63,7 +70,7 @@ plugins=(
   zsh-autosuggestions zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+source_if_possible $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -95,8 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #echo "WAT"
-source ~/.secrets
-source ~/code/tmuxinator.zsh
+source_if_possible ~/.secrets
+source_if_possible ~/code/tmuxinator.zsh
 
 export COV=1
 export DISABLE_DATABASE_ENVIRONMENT_CHECK=1    # set so rake will run all the tests after Rails 5
@@ -119,10 +126,10 @@ ulimit -n 4096
 
 eval "$(rbenv init -)"
 
-if [[ -d ~/Source/zsh-git-prompt ]]; then
-  source ~/Source/zsh-git-prompt/zshrc.sh
+if [[ -d ~/zsh-git-prompt ]]; then
+  source_if_possible ~/zsh-git-prompt/zshrc.sh
 else
-  source ~/src/zsh-git-prompt/zshrc.sh
+  source_if_possible ~/src/zsh-git-prompt/zshrc.sh
 fi
 
 PROMPT='%B%m%~%b$(git_super_status) %# '
@@ -147,7 +154,7 @@ alias mux="tmuxinator"
 alias cleanup="brew update; brew upgraade; brew cleanup"
 
 # added by travis gem
-[ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
+[ -f /Users/Ctreptow/.travis/travis.sh ] && source_if_possible /Users/Ctreptow/.travis/travis.sh
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
