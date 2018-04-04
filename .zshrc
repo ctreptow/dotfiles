@@ -1,16 +1,102 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/Ctreptow/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git osx brew bundler rails
+  zsh-autosuggestions zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#echo "WAT"
 source ~/.secrets
 source ~/code/tmuxinator.zsh
-
-# fzf via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
-fi
-
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
-
-eval "$(rbenv init -)"
 
 export COV=1
 export DISABLE_DATABASE_ENVIRONMENT_CHECK=1    # set so rake will run all the tests after Rails 5
@@ -26,8 +112,12 @@ export RUBY_GC_HEAP_FREE_SLOTS=500000
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+ulimit -n 4096
 
-export GOPATH=$HOME/code/go
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
+eval "$(rbenv init -)"
 
 if [[ -d ~/Source/zsh-git-prompt ]]; then
   source ~/Source/zsh-git-prompt/zshrc.sh
@@ -35,13 +125,8 @@ else
   source ~/src/zsh-git-prompt/zshrc.sh
 fi
 
-fpath=(~/.zsh/completions $fpath)
-autoload -U compinit && compinit
-
 PROMPT='%B%m%~%b$(git_super_status) %# '
 GIT_PROMPT_EXECUTABLE="haskell"
-
-plugins=(bundler osx rake ruby rails gem brew)   # Add wisely, as too many plugins slow down shell startup.
 
 alias code="cd ~/code"
 alias study="cd ~/code/study-notes"
@@ -49,13 +134,6 @@ alias work="~/dotfiles/work"
 alias kkk="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|ruby'"
 alias kkz="pkill -9 'zsh'"
 alias uar='cd $MBC_WORK_ROOT/mbc_tools; bundle exec $MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
-alias fmdev='mbc && foreman start -f Procfile.dev'
-alias fmdevhubble='mbc && foreman start -f Procfile.dev -c all=1,hubble=0'
-alias fmdevmbc='mbc && foreman start -f Procfile.dev -c all=1,mbc=0'
-alias be='bundle exec'
-alias ber='bundle exec rake'
-alias gco='git checkout'
-alias gpo='git push -o origin'
 alias gl='git log --oneline --decorate --graph --stat'
 alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
@@ -71,19 +149,9 @@ alias cleanup="brew update; brew upgraade; brew cleanup"
 # added by travis gem
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
 
-ulimit -n 4096
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/Ctreptow/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
