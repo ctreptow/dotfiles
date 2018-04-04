@@ -66,18 +66,7 @@ alias tml="tmux list-sessions"       #list running tmux sessions
 alias tma="tmux -2 attach -t $1"     #join a current session
 alias tmk="tmux kill-session -t $1"  #kill a session
 alias mux="tmuxinator"
-
-alias src="cd ~/Source"
-#alias work="cd ~/Work"
-alias api="cd ~/Work/api"
-alias mbc="cd ~/Work/mbc"
-alias hub="cd ~/Work/hubble"
-alias head="cd ~/Work/headmaster"
-alias pied="cd ~/Work/piedpiper"
-alias under="cd ~/Work/undertaker"
-alias commish="cd ~/Work/the-commish"
-alias verify="cd ~/Work/verificator"
-alias iron="cd ~/Work/iron-curtain"
+alias cleanup="brew update; brew upgraade; brew cleanup"
 
 # added by travis gem
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source /Users/Ctreptow/.travis/travis.sh
