@@ -2,9 +2,9 @@ name: the-commish
 root: ~/code/work/the-commish
 windows:
   - shell:
-      layout: main-horizontal
-      panes:
-        - shell:
-        - shell:
-        - shell:
+    layout: main-horizontal
+    panes:
+      - shell:
+      - shell:
+      - shell:
   - server: bundle exec rails server -p 3008

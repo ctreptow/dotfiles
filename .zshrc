@@ -129,7 +129,7 @@ eval "$(rbenv init -)"
 if [[ -d ~/zsh-git-prompt ]]; then
   source_if_possible ~/zsh-git-prompt/zshrc.sh
 else
-  source_if_possible ~/src/zsh-git-prompt/zshrc.sh
+  source_if_possible ~/Source/zsh-git-prompt/zshrc.sh
 fi
 
 PROMPT='%B%m%~%b$(git_super_status) %# '
@@ -146,12 +146,12 @@ alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgre
 alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias gitcleanup='git branch --merged | egrep -v "(^\*|master|develop)" | xargs -n 1 git branch -d'
 alias rbc='git ls-files -m | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop'                                               #Before Commit:
-alias rbp='git diff-tree -r --no-commit-id --name-only master@\{u\} head | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop' #Before Push:
+alias rbp='git diff-tree -r --no-commit-id --name-only master@\{u\} head | xargs ls -1 2>/dev/null | grep '\.rb$' | grep -v schema | xargs rubocop' #Before Push:
 alias tml="tmux list-sessions"       #list running tmux sessions
 alias tma="tmux -2 attach -t $1"     #join a current session
 alias tmk="tmux kill-session -t $1"  #kill a session
 alias mux="tmuxinator"
-alias cleanup="brew update; brew upgraade; brew cleanup"
+alias cleanup="brew update; brew upgrade; brew cleanup"
 
 # added by travis gem
 [ -f /Users/Ctreptow/.travis/travis.sh ] && source_if_possible /Users/Ctreptow/.travis/travis.sh
@@ -162,3 +162,4 @@ SAVEHIST=1000
 setopt autocd
 bindkey -v
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/node@8/bin:$PATH"

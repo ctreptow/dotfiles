@@ -1,5 +1,5 @@
-name: commercial-rating
-root: ~/code/work/commercial-rating
+name: skyfall
+root: ~/code/work/skyfall
 windows:
   - shell:
       layout: main-horizontal
@@ -7,4 +7,4 @@ windows:
         - shell:
         - shell:
         - shell:
-  - server: bundle exec rackup config.ru -p 9293
+  - server: bundle exec rails server -p 3009

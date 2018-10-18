@@ -23,7 +23,7 @@ let g:gutentags_resolve_symlinks = 1
 " highlight link ALEErrorSign Title
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
 " set rtp+=/usr/local/bin/fzf
 " set rtp+=~/.fzf
 " nmap ; :Buffers<CR>
@@ -106,6 +106,7 @@ set nocompatible          " We're running Vim, not Vi!
 set ruler                 " Show current line and column at bottom right
 set smartcase             " Include at least one uppercase character to search in a case-sensitive manner
 set number relativenumber " hybrid numbering.  Relative, plus the single absolution line you're on
+set colorcolumn=131
 " turn off relative numbering in insert mode or when buffer loses focus
 augroup numbertoggle
   autocmd!
@@ -127,9 +128,17 @@ let maplocalleader = ","
 
 let g:elm_format_autosave = 1
 
+map <Leader>y :w !pbcopy<CR><CR>
+
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'elixir-editors/vim-elixir'
+
 " Plugin 'tpope/vim-bundler'
 " Plugin 'tpope/vim-rails'
 " Plugin 'thoughtbot/vim-rspec'
@@ -138,8 +147,9 @@ call vundle#begin()
 " Plugin 'tpope/vim-fugitive'
 " Plugin 'posva/vim-vue'
 " Plugin 'w0rp/ale'
-Plugin 'elmcast/elm-vim'
-Plugin 'elixir-lang/vim-elixir'
+Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'elmcast/elm-vim'
+" Plugin 'elixir-lang/vim-elixir'
 " Plugin 'elixir-editors/vim-elixir'
 Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
