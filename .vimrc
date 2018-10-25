@@ -1,4 +1,4 @@
-" 90% talk
+" 90% talk (https://www.youtube.com/watch?v=XA2WjJbmmoM)
 set nocompatible          " We're running Vim, not Vi!
 " enable syntax and plugins (for netrw)
 syntax enable             " Enable syntax highlighting
