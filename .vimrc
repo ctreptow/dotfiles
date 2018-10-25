@@ -68,8 +68,27 @@ let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\S\+'
 " nerdtree
 " vim-elixir
 " vim-ruby heredoc syntax
+" tim pope's
 
 
+" stuff I had before that I like
+set undodir=~/.vim/undo
+set undofile
+set expandtab             " Expand all tabs to spaces
+set tabstop=2             " Spaces used when tab key is pressed
+set shiftwidth=2          " Spaces used for indentation
+set nu                    " Turn on line numbers
+set number relativenumber " hybrid numbering.  Relative, plus the single absolution line you're on
+set colorcolumn=131
+"" turn off relative numbering in insert mode or when buffer loses focus
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+filetype on               " Enable filetype detection
+filetype indent on        " Enable filetype-specific indenting
+filetype plugin on        " Enable filetype-specific plugins
 
 " previous to talk
 "set directory=$HOME/.vim/swapfiles//
