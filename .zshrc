@@ -137,7 +137,7 @@ GIT_PROMPT_EXECUTABLE="haskell"
 
 alias code="cd ~/code"
 alias study="cd ~/code/study-notes"
-alias work="~/dotfiles/work"
+alias work="~/code/work/dotfiles/work"
 alias kkk="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|ruby'"
 alias kkz="pkill -9 'zsh'"
 alias uar='cd $MBC_WORK_ROOT/mbc_tools; bundle exec $MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
