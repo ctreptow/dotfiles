@@ -63,6 +63,12 @@ let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\S\+'
 " BUILD INTEGRATION:
 " skipping - available plugins are better than this
 
+" PLUGINS USED:
+" vundle
+" nerdtree
+" vim-elixir
+" vim-ruby heredoc syntax
+
 
 
 " previous to talk
