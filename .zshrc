@@ -132,7 +132,7 @@ else
   source_if_possible ~/Source/zsh-git-prompt/zshrc.sh
 fi
 
-PROMPT='%m%~$(git_super_status) %# '
+PROMPT='%~$(git_super_status) %# '
 GIT_PROMPT_EXECUTABLE="haskell"
 
 alias code="cd ~/code"
