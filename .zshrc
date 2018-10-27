@@ -137,6 +137,7 @@ GIT_PROMPT_EXECUTABLE="haskell"
 
 alias code="cd ~/code"
 alias study="cd ~/code/study-notes"
+alias goe="cd ~/code/elixir"
 alias work="~/code/work/dotfiles/work"
 alias kkk="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|ruby'"
 alias kkz="pkill -9 'zsh'"
