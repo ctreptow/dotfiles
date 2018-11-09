@@ -67,6 +67,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git osx brew bundler rails
+  shrink-path
   zsh-autosuggestions zsh-syntax-highlighting
 )
 
@@ -132,14 +133,14 @@ else
   source_if_possible ~/Source/zsh-git-prompt/zshrc.sh
 fi
 
-PROMPT='%B%n%~%b$(git_super_status) %# '
+PROMPT='%B$(shrink_path -f)$(git_super_status)> '
 GIT_PROMPT_EXECUTABLE="haskell"
 
 alias code="cd ~/code"
 alias study="cd ~/code/study-notes"
 alias goe="cd ~/code/elixir"
 alias work="~/code/work/dotfiles/work"
-alias kkk="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|ruby'"
+alias kkr="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|ruby'"
 alias kkz="pkill -9 'zsh'"
 alias uar='cd $MBC_WORK_ROOT/mbc_tools; bundle exec $MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
 alias gl='git log --oneline --decorate --graph --stat'
@@ -163,4 +164,9 @@ SAVEHIST=1000
 setopt autocd
 bindkey -v
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+# Not sure why I had this set
+#export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"

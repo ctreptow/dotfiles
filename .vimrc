@@ -79,7 +79,7 @@ set tabstop=2             " Spaces used when tab key is pressed
 set shiftwidth=2          " Spaces used for indentation
 set nu                    " Turn on line numbers
 set number relativenumber " hybrid numbering.  Relative, plus the single absolution line you're on
-set colorcolumn=131
+set colorcolumn=81
 "" turn off relative numbering in insert mode or when buffer loses focus
 augroup numbertoggle
   autocmd!
