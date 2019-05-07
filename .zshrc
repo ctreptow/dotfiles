@@ -137,9 +137,11 @@ PROMPT='%B$(shrink_path -f)$(git_super_status)> '
 GIT_PROMPT_EXECUTABLE="haskell"
 
 alias code="cd ~/code"
+alias dots="cd ~/code/dotfiles"
 alias goe="cd ~/code/exercism/elixir"
 alias study="cd ~/code/study-notes"
 alias work="~/code/work/dotfiles/work"
+alias gow="cd ~/code/work"
 alias kkr="pkill -9 -f 'rb-fsevent|rails|spring|puma|webpack|ruby'"
 alias kkz="pkill -9 'zsh'"
 alias uar='cd $MBC_WORK_ROOT/mbc_tools; bundle exec $MBC_WORK_ROOT/mbc_tools/scripts/update_all_repos'
