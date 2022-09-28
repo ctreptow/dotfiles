@@ -48,7 +48,7 @@ zstyle ':omz:update' frequency 13
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -77,7 +77,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf docker heroku fzf)
+
+plugins=(fzf ag git gh asdf heroku bundler rake rails)
 
 source $ZSH/oh-my-zsh.sh
 #################### Oh My Zsh ####################
@@ -109,6 +110,25 @@ export HISTFILE=~/.histfile
 export HISTSIZE=10000
 export SAVEHIST=10000
 
+# M1 location from homebrew
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+#export LDFLAGS="-L/opt/homebrew/opt/readline/lib:$LDFLAGS"
+#export CPPFLAGS="-I/opt/homebrew/opt/readline/include:$CPPFLAGS"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig:$PKG_CONFIG_PATH"
+export optflags="-Wno-error=implicit-function-declaration"
+#export LDFLAGS="-L/opt/homebrew/opt/libffi/lib:$LDFLAGS"
+#export CPPFLAGS="-I/opt/homebrew/opt/libffi/include:$CPPFLAGS"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib:/opt/homebrew/opt/libpq/lib:/opt/homebrew/Cellar/postgresql@13/13.4/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include:/opt/homebrew/opt/libpq/include:/opt/homebrew/Cellar/postgresql@13/13.4/include"
+
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH:/opt/homebrew/opt/icu4c/sbin:$PATH"
+
 #################### ENV vars  ####################
 
 ####################  Aliases  ####################
@@ -128,15 +148,10 @@ export SAVEHIST=10000
 ####################  Prompt   ####################
 
 ####################  Setups   ####################
-# fzf key bindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# version managers
-source $(brew --prefix asdf)/asdf.sh
+ulimit -n 4196
 ####################  Setups   ####################
 
 ####################   Path   ####################
-# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 ####################   Path   ####################
 
