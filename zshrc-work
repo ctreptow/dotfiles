@@ -78,7 +78,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(fzf ag git gh asdf heroku bundler rake rails)
+plugins=(fzf ag git gh asdf brew heroku bundler rake rails)
 
 source $ZSH/oh-my-zsh.sh
 #################### Oh My Zsh ####################
@@ -114,11 +114,12 @@ export SAVEHIST=10000
 export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-#export LDFLAGS="-L/opt/homebrew/opt/readline/lib:$LDFLAGS"
-#export CPPFLAGS="-I/opt/homebrew/opt/readline/include:$CPPFLAGS"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig:$PKG_CONFIG_PATH"
 export optflags="-Wno-error=implicit-function-declaration"
+
+#export LDFLAGS="-L/opt/homebrew/opt/readline/lib:$LDFLAGS"
+#export CPPFLAGS="-I/opt/homebrew/opt/readline/include:$CPPFLAGS"
 #export LDFLAGS="-L/opt/homebrew/opt/libffi/lib:$LDFLAGS"
 #export CPPFLAGS="-I/opt/homebrew/opt/libffi/include:$CPPFLAGS"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -126,8 +127,9 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
 # export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib:/opt/homebrew/opt/libpq/lib:/opt/homebrew/Cellar/postgresql@13/13.4/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include:/opt/homebrew/opt/libpq/include:/opt/homebrew/Cellar/postgresql@13/13.4/include"
 
-export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 export PATH="/opt/homebrew/opt/icu4c/bin:$PATH:/opt/homebrew/opt/icu4c/sbin:$PATH"
+# export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/opt/openssl@1.1/lib/"
 
 #################### ENV vars  ####################
 
