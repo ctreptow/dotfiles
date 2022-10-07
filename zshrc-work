@@ -111,8 +111,8 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # M1 location from homebrew
-export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+#export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+#export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 
 # export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/readline/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -131,7 +131,11 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PATH="/opt/homebrew/opt/icu4c/bin:$PATH:/opt/homebrew/opt/icu4c/sbin:$PATH"
 # export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/opt/openssl@1.1/lib/"
 
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@13/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@13/include"
 #################### ENV vars  ####################
+#
 
 ####################  Aliases  ####################
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
