@@ -29,3 +29,5 @@
 [user]
 	name = Craig Treptow
 	email = ctreptow@merchantsbonding.com
+[pull]
+	rebase = true
