@@ -86,10 +86,11 @@ source $ZSH/oh-my-zsh.sh
 #################### Functions ####################
 
 # https://stackoverflow.com/a/55171807/329921
-# kill_port_proc <port>
+# killport <port>
 function killport () {
   readonly port=${1:?"The port must be specified."}
   lsof -i tcp:"$port" | grep LISTEN | awk '{print $2}'
+  lsof -i tcp:"$port" | grep LISTEN | awk '{print $2}' | xargs kill -9
 }
 
 header() {
